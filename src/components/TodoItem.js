@@ -4,6 +4,14 @@ class TodoItem extends Component {
 
     render() {
         const item = this.renderDOM();
+        const removeButton = item.querySelector('button');
+
+        const onRemove = this.props.onRemove;
+        const todoToRemove = this.props.todo;
+
+        removeButton.addEventListener('click', () => {
+            onRemove(todoToRemove);
+        });
 
         return item;
     }
