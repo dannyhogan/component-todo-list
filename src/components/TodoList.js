@@ -11,7 +11,6 @@ class ToDoList extends Component {
         todos.forEach(todo => {
             const todoItem = new TodoItem({ todo });
             const todoItemDOM = todoItem.render();
-            console.log(todoItemDOM);
             list.appendChild(todoItemDOM);
         });
 
