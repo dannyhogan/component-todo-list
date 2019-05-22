@@ -21,6 +21,7 @@ class TodoItem extends Component {
             <label>${this.props.todo.task}
                 <input type="checkbox" ${checked}>
             </label>
+            <button id="delete">ⓧ</button>
         </li>
         `;
     }
