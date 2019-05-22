@@ -18,7 +18,7 @@ class App extends Component {
                 const index = todos.indexOf(todoToRemove);
 
                 todos.splice(index, 1);
-                todoList.update({ todos })
+                todoList.update({ todos });
             }
         });
 
