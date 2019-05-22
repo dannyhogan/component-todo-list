@@ -81,7 +81,7 @@ form button:hover {
     top: 10%;
     right: 5%;
     background-color: transparent;
-    color: white;
+    color: rgba(255, 255, 255, 0.26);
     border: none;
     transition: .5s;
     font-size: 1em;
