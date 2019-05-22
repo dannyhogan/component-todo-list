@@ -15,6 +15,7 @@ test('returns completed TodoItem dom', assert => {
             <label>Learn HTML
                 <input type="checkbox" checked>
             </label>
+            <button id="delete">ⓧ</button>
         </li>
     `;
 
@@ -38,6 +39,7 @@ test('returns uncompleted TodoItem dom', assert => {
             <label>Learn HTML
                 <input type="checkbox" >
             </label>
+            <button id="delete">ⓧ</button>
         </li>
     `;
 
