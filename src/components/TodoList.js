@@ -4,7 +4,7 @@ class ToDoList extends Component {
     
     renderTemplate() {
         return /*html*/`
-        <ul></ul>
+        <ul>${this.props.todos.length}</ul>
     `;
     }
 }
