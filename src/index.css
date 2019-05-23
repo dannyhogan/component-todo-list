@@ -38,6 +38,10 @@ header {
     text-shadow: 0px 0px 10px black;
 }
 
+#color {
+    margin: 5px;
+}
+
 #add {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.24);
@@ -87,6 +91,10 @@ header {
     transition: .75s;
     text-align: center;
 }
+
+/* #radios label {
+    display: block;
+} */
 
 #radios label input {
     margin-top: 5px;
