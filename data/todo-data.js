@@ -1,4 +1,4 @@
-const todos = [
+const todoData = [
     {
         id: 'todo1',
         task: 'Learn HTML',
@@ -31,4 +31,4 @@ const todos = [
     }
 ];
 
-export default todos;
+export default todoData;
