@@ -3,6 +3,7 @@ import Header from './Header.js';
 import TodoList from './TodoList.js';
 import AddTodo from './AddTodo.js';
 import Filter from './Filter.js';
+import ColorPicker from './ColorPicker.js';
 import todos from '../../data/todo-data.js';
 import filterByTask from '../filter-todos.js';
 
@@ -10,21 +11,14 @@ class App extends Component {
     
     render() {
         const dom = this.renderDOM();
+        const app = document.getElementById('app');
 
         const header = new Header();
-        const headerDOM = header.render();
-
-        const todoList = new TodoList({ 
-            todos,
-            onRemove: todoToRemove => {
-                const index = todos.indexOf(todoToRemove);
-
-                todos.splice(index, 1);
-                todoList.update({ todos });
+        const colorPicker = new ColorPicker({
+            changeColor: color => {
+                app.style.background = color;
             }
         });
-
-        const todoListDOM = todoList.render();
 
         const addTodo = new AddTodo({
             addTodo: newTodo => {
@@ -40,15 +34,24 @@ class App extends Component {
                 todoList.update({ todos: filtered });
             }
         });
-        const filterDOM = filter.render();
 
-        const addTodoDOM = addTodo.render();
+        const todoList = new TodoList({ 
+            todos,
+            onRemove: todoToRemove => {
+                const index = todos.indexOf(todoToRemove);
+
+                todos.splice(index, 1);
+                todoList.update({ todos });
+            }
+        });
+
         const main = dom.querySelector('main');
 
-        main.appendChild(headerDOM);
-        main.appendChild(addTodoDOM);
-        main.appendChild(filterDOM);
-        main.appendChild(todoListDOM);
+        main.appendChild(header.render());
+        main.appendChild(colorPicker.render());
+        main.appendChild(addTodo.render());
+        main.appendChild(filter.render());
+        main.appendChild(todoList.render());
 
         return dom;
     }
