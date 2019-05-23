@@ -85,7 +85,7 @@ form input {
 }
 
 ::placeholder {
-    color: white;
+    color: rgba(255, 255, 255, 0.466);
 }
 
 #delete {
@@ -104,4 +104,13 @@ form input {
 #delete:hover {
     color: red;
     transition: .5s;
+}
+
+#filter {
+    background: transparent;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    outline: none;
 }
