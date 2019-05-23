@@ -9,7 +9,7 @@ const todos = [
     },
     {
         task: 'Learn Javascript',
-        completed: true
+        completed: false
     },
     {
         task: 'Learn React',
@@ -21,14 +21,6 @@ const todos = [
     },
     {
         task: 'Learn Node',
-        completed: false
-    },
-    {
-        task: 'Learn ASync',
-        completed: false
-    },
-    {
-        task: 'Learn APIs',
         completed: false
     }
 ];
