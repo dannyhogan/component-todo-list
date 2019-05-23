@@ -8,7 +8,9 @@ class ColorPicker extends Component {
         const colorPicker = dom.querySelector('input');
 
         colorPicker.addEventListener('change', () => {
-            changeColor(colorPicker.value);
+            const colorData = JSON.stringify(colorPicker.value);
+            localStorage.setItem('color', colorData);
+            changeColor();
         });
 
         return dom;
