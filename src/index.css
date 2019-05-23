@@ -13,11 +13,12 @@ main {
 }
 
 header {
-    height: 15vh;
+    height: 10vh;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.288);
     display: flex;
     justify-content: center;
+    align-items: center;
     color: white;
     border-bottom: 2px solid white;
 }
@@ -58,6 +59,9 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.226);
+    border-radius: 15px;
 }
 
 form button {
@@ -106,11 +110,26 @@ form input {
     transition: .5s;
 }
 
-#filter {
+#textFilter {
     background: transparent;
     padding: 5px;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.123);
     border-radius: 10px;
     color: white;
     outline: none;
+    transition: 1s;
+    margin: 10px;
+}
+
+#textFilter:focus {
+    border: 2px solid rgb(255, 255, 255);
+    transition: 1s;
+}
+
+#filters {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.329);
 }
