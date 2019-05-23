@@ -19,6 +19,16 @@ const todoApi = {
             todos = [];
         }
         return todos;
+    },
+    remove(id) {
+        const todos = todoApi.getAll();
+        
+        const updatedTodos = todos.filter(todo => {
+            return todo.id !== id;
+        });
+
+        const todoData = JSON.stringify(updatedTodos);
+        localStorage.setItem(todoApi.key, todoData);
     }
 };
 
