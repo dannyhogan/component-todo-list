@@ -7,7 +7,7 @@ class TodoItem extends Component {
         const removeButton = item.querySelector('button');
 
         const onRemove = this.props.onRemove;
-        const todoToRemove = this.props.todo;
+        const todoToRemove = this.props.todo.id;
 
         removeButton.addEventListener('click', () => {
             onRemove(todoToRemove);
