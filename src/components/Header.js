@@ -12,7 +12,7 @@ class Header extends Component {
     renderTemplate() {
         return /*html*/`
             <header>
-                <h1>To Do List!</h1>
+                <h1>To Do List</h1>
             </header>
         `;
     }
