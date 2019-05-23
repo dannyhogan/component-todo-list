@@ -20,18 +20,22 @@ class Filter extends Component {
     
     renderTemplate() {
         return /*html*/`
-            <div id="filters">
-                <form>
-                    <input type="text" name="text" id="textFilter" placeholder="Search todo list:">
-                    <label>All
-                        <input id="all" name="status" type="radio" value="all" class="radio">
-                    </label>
-                    <label>Complete
-                        <input id="complete" name="status" type="radio" value="true" class="radio">
-                    </label>
-                    <label>Incomplete
-                        <input id="incomplete" name="status" type="radio" value="false" class="radio">
-                    </label>
+            <div id="filters">  
+                <form id="filter">
+                    <section>
+                        <input id="text" type="text" name="text" id="textFilter" placeholder="Search todo list:">
+                    </section>
+                    <section id="radios">
+                        <label>All
+                            <input id="all" name="status" type="radio" value="all" class="radio">
+                        </label>
+                        <label>Complete
+                            <input id="complete" name="status" type="radio" value="true" class="radio">
+                        </label>
+                        <label>Incomplete
+                            <input id="incomplete" name="status" type="radio" value="false" class="radio">
+                        </label>
+                    </section>
                 </form>
             </div>
         `;
