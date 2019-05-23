@@ -30,7 +30,7 @@ test('return todos with tasks that include filter', assert => {
     assert.deepEqual(expected, [todos[0]]);
 });
 
-test('return empty filter array if no filter', assert => {
+test('return all todos if no filter', assert => {
     //arrange
     const filter = {
         task: ''
@@ -39,5 +39,5 @@ test('return empty filter array if no filter', assert => {
     //act
     const expected = filterTodosByTask(todos, filter);
     //assert
-    assert.deepEqual(expected, []);
+    assert.deepEqual(expected, todos);
 });
