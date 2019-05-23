@@ -92,10 +92,6 @@ header {
     text-align: center;
 }
 
-/* #radios label {
-    display: block;
-} */
-
 #radios label input {
     margin-top: 5px;
     font-size: .25em;
