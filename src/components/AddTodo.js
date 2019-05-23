@@ -1,4 +1,5 @@
 import Component from './Component.js';
+import todoApi from '../services/todo-api.js';
 
 class AddTodo extends Component {
     render() {
@@ -10,10 +11,11 @@ class AddTodo extends Component {
 
             const formData = new FormData(form);
             const newTodo = {
+                id: formData.get('task') + Date.now(),
                 task: formData.get('task'),
                 completed: false
             };
-
+            
             addTodo(newTodo);
             
             form.reset();
