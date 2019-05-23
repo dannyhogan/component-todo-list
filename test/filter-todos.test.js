@@ -21,7 +21,8 @@ const todos = [
 test('return todos with tasks that include filter', assert => {
     //arrange
     const filter = {
-        task: 'ht'
+        task: 'ht',
+        radio: ''
     };
 
     //act
@@ -33,7 +34,8 @@ test('return todos with tasks that include filter', assert => {
 test('return all todos if no filter', assert => {
     //arrange
     const filter = {
-        task: ''
+        task: '',
+        radio: ''
     };
 
     //act
