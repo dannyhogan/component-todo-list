@@ -4,7 +4,7 @@ import TodoList from './TodoList.js';
 import AddTodo from './AddTodo.js';
 import Filter from './Filter.js';
 import todos from '../../data/todo-data.js';
-import filterByTask from '../filter-by-task.js';
+import filterByTask from '../filter-todos.js';
 
 class App extends Component {
     

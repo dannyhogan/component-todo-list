@@ -1,4 +1,4 @@
-function filterTodosByTask(todos, filter) {
+function filterTodos(todos, filter) {
 
     const lowerCaseTaskFilter = filter.task.toLowerCase();
 
@@ -17,4 +17,4 @@ function filterTodosByTask(todos, filter) {
     });
 }
 
-export default filterTodosByTask;
+export default filterTodos;

@@ -1,4 +1,4 @@
-import filterTodosByTask from '../src/filter-by-task.js';
+import filterTodos from '../src/filter-todos.js';
 const test = QUnit.test;
 
 QUnit.module('filter todos');
@@ -22,7 +22,7 @@ test('return todos with tasks that include filter', assert => {
     };
 
     //act
-    const expected = filterTodosByTask(todos, filter);
+    const expected = filterTodos(todos, filter);
     //assert
     assert.deepEqual(expected, [todos[0]]);
 });
@@ -35,7 +35,7 @@ test('return all todos if no filter', assert => {
     };
 
     //act
-    const expected = filterTodosByTask(todos, filter);
+    const expected = filterTodos(todos, filter);
     //assert
     assert.deepEqual(expected, todos);
 });
@@ -48,7 +48,7 @@ test('return all todos if all radio button is checked', assert => {
     };
 
     //act
-    const expected = filterTodosByTask(todos, filter);
+    const expected = filterTodos(todos, filter);
     //assert
     assert.deepEqual(expected, todos);
 });
@@ -61,7 +61,7 @@ test('return completed todos if completed radio button is checked', assert => {
     };
 
     //act
-    const result = filterTodosByTask(todos, filter);
+    const result = filterTodos(todos, filter);
     //assert
     assert.deepEqual(result, [todos[0]]);
 });
@@ -74,7 +74,7 @@ test('return incomplete todos if incomplete radio button is checked', assert => 
     };
 
     //act
-    const result = filterTodosByTask(todos, filter);
+    const result = filterTodos(todos, filter);
     //assert
     assert.deepEqual(result, [todos[1]]);
 });
