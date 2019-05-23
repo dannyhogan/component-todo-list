@@ -2,7 +2,9 @@ import Component from './Component.js';
 import Header from './Header.js';
 import TodoList from './TodoList.js';
 import AddTodo from './AddTodo.js';
+import Filter from './Filter.js';
 import todos from '../../data/todo-data.js';
+import filterByTask from '../filter-by-task.js';
 
 class App extends Component {
     
@@ -28,14 +30,24 @@ class App extends Component {
             addTodo: newTodo => {
                 todos.unshift(newTodo);
                 todoList.update({ todos });
+                filter.update();
             }
         });
-        
+
+        const filter = new Filter({
+            onFilter: filter => {
+                const filtered = filterByTask(todos, filter);
+                todoList.update({ todos: filtered });
+            }
+        });
+        const filterDOM = filter.render();
+
         const addTodoDOM = addTodo.render();
         const main = dom.querySelector('main');
 
         main.appendChild(headerDOM);
         main.appendChild(addTodoDOM);
+        main.appendChild(filterDOM);
         main.appendChild(todoListDOM);
 
         return dom;
