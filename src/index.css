@@ -75,6 +75,19 @@ form button:hover {
     transition: .5s;
 }
 
+form input {
+    background: transparent;
+    outline: none;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
 #delete {
     cursor: pointer;
     position: absolute;
