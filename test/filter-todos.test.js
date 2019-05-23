@@ -10,12 +10,8 @@ const todos = [
     },
     {
         task: 'Learn CSS',
-        completed: true
+        completed: false
     },
-    {
-        task: 'Learn Javascript',
-        completed: true
-    }
 ];
 
 test('return todos with tasks that include filter', assert => {
@@ -42,4 +38,43 @@ test('return all todos if no filter', assert => {
     const expected = filterTodosByTask(todos, filter);
     //assert
     assert.deepEqual(expected, todos);
+});
+
+test('return all todos if all radio button is checked', assert => {
+    //arrange
+    const filter = {
+        task: '',
+        radio: 'all'
+    };
+
+    //act
+    const expected = filterTodosByTask(todos, filter);
+    //assert
+    assert.deepEqual(expected, todos);
+});
+
+test('return completed todos if completed radio button is checked', assert => {
+    //arrange
+    const filter = {
+        task: '',
+        radio: 'true'
+    };
+
+    //act
+    const result = filterTodosByTask(todos, filter);
+    //assert
+    assert.deepEqual(result, [todos[0]]);
+});
+
+test('return incomplete todos if incomplete radio button is checked', assert => {
+    //arrange
+    const filter = {
+        task: '',
+        radio: 'false'
+    };
+
+    //act
+    const result = filterTodosByTask(todos, filter);
+    //assert
+    assert.deepEqual(result, [todos[1]]);
 });
