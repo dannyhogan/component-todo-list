@@ -4,7 +4,7 @@ const todoApi = {
     key: 'todo',
     save(todo) {
         let todos = todoApi.getAll();
-        todos.push(todo);
+        todos.unshift(todo);
         const todoData = JSON.stringify(todos);
         localStorage.setItem(todoApi.key, todoData);
     },
