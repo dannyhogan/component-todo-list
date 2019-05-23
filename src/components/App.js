@@ -4,8 +4,9 @@ import TodoList from './TodoList.js';
 import AddTodo from './AddTodo.js';
 import Filter from './Filter.js';
 import ColorPicker from './ColorPicker.js';
-import todos from '../../data/todo-data.js';
+import todoData from '../../data/todo-data.js';
 import filterByTask from '../filter-todos.js';
+import todoApi from '../services/todo-api.js';
 
 class App extends Component {
     
@@ -20,8 +21,11 @@ class App extends Component {
             }
         });
 
+        const todos = todoApi.getAll();
+
         const addTodo = new AddTodo({
             addTodo: newTodo => {
+                todoApi.save(newTodo);
                 todos.unshift(newTodo);
                 todoList.update({ todos });
                 filter.update();
@@ -38,10 +42,8 @@ class App extends Component {
         const todoList = new TodoList({ 
             todos,
             onRemove: todoToRemove => {
-                const index = todos.indexOf(todoToRemove);
-
-                todos.splice(index, 1);
-                todoList.update({ todos });
+                todoApi.remove(todoToRemove);
+                todoList.update({ todos: todoApi.getAll() });
             }
         });
 
