@@ -4,11 +4,14 @@ class Filter extends Component {
     
     render() {
         const dom = this.renderDOM();
-        const input = dom.querySelector('#textFilter');
+        const form = dom.querySelector('form');
 
-        input.addEventListener('input', () => {
-            this.props.onFilter({ 
-                task: input.value
+        form.addEventListener('input', () => {
+            const checkedRadio = form.elements['status'].value;
+            const textResult = form.elements['text'].value;
+            this.props.onFilter({
+                task: textResult,
+                radio: checkedRadio
             });
         });
 
@@ -18,13 +21,18 @@ class Filter extends Component {
     renderTemplate() {
         return /*html*/`
             <div id="filters">
-                <section>
-                    <input type="text" id="textFilter" placeholder="Search todo list:">
-                </section>
-                <section>
-                    <input type="checkbox">Complete
-                    <input type="checkbox">Incomplete
-                </section>
+                <form>
+                    <input type="text" name="text" id="textFilter" placeholder="Search todo list:">
+                    <label>All
+                        <input id="all" name="status" type="radio" value="all" class="radio">
+                    </label>
+                    <label>Complete
+                        <input id="complete" name="status" type="radio" value="true" class="radio">
+                    </label>
+                    <label>Incomplete
+                        <input id="incomplete" name="status" type="radio" value="false" class="radio">
+                    </label>
+                </form>
             </div>
         `;
     }
