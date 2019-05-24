@@ -56,7 +56,7 @@ class App extends Component {
                 todoApi.change(todoToChange);
                 const newTodos = todoApi.getAll();
                 todoList.update({ todos: newTodos });
-                filter.update();
+                filter.update({ todos: newTodos });
             }
         });
 
