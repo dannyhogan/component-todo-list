@@ -27,7 +27,7 @@ class Filter extends Component {
                     </section>
                     <section id="radios">
                         <label>All
-                            <input id="all" name="status" type="radio" value="all" class="radio">
+                            <input id="all" name="status" type="radio" value="all" class="radio" checked>
                         </label>
                         <label>Complete
                             <input id="complete" name="status" type="radio" value="true" class="radio">
