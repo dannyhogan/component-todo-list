@@ -5,12 +5,18 @@ class TodoItem extends Component {
     render() {
         const item = this.renderDOM();
         const removeButton = item.querySelector('button');
+        const checkbox = item.querySelector('input');
 
+        const todo = this.props.todo;
         const onRemove = this.props.onRemove;
-        const todoToRemove = this.props.todo.id;
+        const onChange = this.props.onChange;
 
         removeButton.addEventListener('click', () => {
-            onRemove(todoToRemove);
+            onRemove(todo.id);
+        });
+
+        checkbox.addEventListener('click', () => {
+            onChange(todo.id);
         });
 
         return item;
