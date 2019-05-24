@@ -1,36 +1,34 @@
-const todos = [
+const todoData = [
     {
+        id: 'todo1',
         task: 'Learn HTML',
         completed: true
     },
     {
+        id: 'todo2',
         task: 'Learn CSS',
         completed: true
     },
     {
+        id: 'todo3',
         task: 'Learn Javascript',
-        completed: true
+        completed: false
     },
     {
+        id: 'todo4',
         task: 'Learn React',
         completed: false
     },
     {
+        id: 'todo5',
         task: 'Learn Firebase',
         completed: false
     },
     {
+        id: 'todo6',
         task: 'Learn Node',
-        completed: false
-    },
-    {
-        task: 'Learn ASync',
-        completed: false
-    },
-    {
-        task: 'Learn APIs',
         completed: false
     }
 ];
 
-export default todos;
+export default todoData;

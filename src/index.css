@@ -1,94 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    background-color: rgba(0, 41, 128, 0.61);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Comfortaa;
+    background: rgb(29, 29, 29);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-main {
+#app {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 30vw;
+    margin: 20px;
+    background: rgba(69, 52, 168, 0.479);
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px black;
 }
 
 header {
-    height: 15vh;
-    width: 100vw;
-    background-color: rgba(255, 255, 255, 0.288);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.24);
+    padding-top: 10px;
+    border-radius: 10px;
+    width: 30vw;
+    z-index: -1;
     justify-content: center;
+    align-items: center;
+    display: flex;
+    text-shadow: 0px 0px 10px black;
+}
+
+#color {
+    margin: 5px;
+}
+
+#add {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.24);
+    margin: 10px;
+    border-radius: 15px;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    transition: .75s;
+    text-align: center;
+}
+
+#add button {
+    background: transparent;
     color: white;
-    border-bottom: 2px solid white;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    transition: .5s;
+}
+
+#add button:hover {
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    transition: .5s;
+}
+
+#add input {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.205);
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+    transition: .5s;
+}
+
+#add input:focus {
+    border: 1px solid rgb(255, 255, 255);
+    transition: .5s;
+}
+
+#filter {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.24);
+    margin: 10px;
+    border-radius: 15px;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    transition: .75s;
+    text-align: center;
+}
+
+#radios label input {
+    margin-top: 5px;
+    font-size: .25em;
+}
+
+#text {
+    background: transparent;
+    outline: none;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.205);
+    border-radius: 10px;
+    margin: 2.5px;
+    transition: .5s;
+    color: white;
+}
+
+#text:focus {
+    border: 1px solid rgb(255, 255, 255);
+    transition: .5s;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.39);
 }
 
 ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 ul li {
-    color: white;
-    background-color: rgba(59, 59, 59, 0.212);
-    font-size: 1.5em;
-    border: 2px solid white;
-    border-radius: 15px;
-    padding: 5px;
-    width: 30vw;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.24);
     margin: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: .5s;
+    border-radius: 15px;
     position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    transition: .75s;
+    text-align: left;
 }
+
 
 ul li:hover {
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.486);
-    transition: .5s;
-}
-
-form {
-    color: rgba(255, 255, 255, 0.315);
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-form button {
-    margin: 10px;
-    background-color: transparent;
-    color: white;
     border: 2px solid white;
-    border-radius: 10px;
-    padding: 5px;
-    transition: .5s;
+    box-shadow: 0px 0px 5px black;
+    transition: .75s;
+    background-color: rgba(0, 0, 0, 0.418);
 }
 
-form button:hover {
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.486);
-    transition: .5s;
-}
-
-#delete {
-    cursor: pointer;
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.26);
-    border: none;
-    transition: .5s;
-    font-size: 1em;
+ul li button {
+    background: transparent;
     outline: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    transition: .75s;
 }
 
-#delete:hover {
-    color: red;
-    transition: .5s;
+ul li button:hover {
+    color: rgba(255, 0, 0, 0.493);
+    transition: .75s;
 }
