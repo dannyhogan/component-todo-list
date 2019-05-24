@@ -36,6 +36,13 @@ const todoApi = {
             return true;
         }
         return false;
+    },
+    change(todoToChange) {
+        const todos = todoApi.getAll();
+        let todo = findById(todos, todoToChange);
+        todo.completed = !todo.completed;
+        const todoData = JSON.stringify(todos);
+        localStorage.setItem(todoApi.key, todoData);
     }
 };
 
