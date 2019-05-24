@@ -29,6 +29,13 @@ const todoApi = {
 
         const todoData = JSON.stringify(updatedTodos);
         localStorage.setItem(todoApi.key, todoData);
+    },  
+    isEmpty() {
+        const todos = localStorage.getItem(todoApi.key);
+        if(!todos) {
+            return true;
+        }
+        return false;
     }
 };
 
