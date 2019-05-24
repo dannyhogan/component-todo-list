@@ -7,6 +7,7 @@ import ColorPicker from './ColorPicker.js';
 import todoData from '../../data/todo-data.js';
 import filterByTask from '../filter-todos.js';
 import todoApi from '../services/todo-api.js';
+import setColor from '../services/set-color.js';    
 
 class App extends Component {
     
@@ -14,9 +15,22 @@ class App extends Component {
         const dom = this.renderDOM();
         const app = document.getElementById('app');
 
+        if(todoApi.isEmpty()) {
+            todoData.forEach(todo => {
+                if(!todoApi.get(todo.id)) {
+                    todoApi.save(todo);
+                }
+            });
+        }
+
+        setColor(app);
+        
         const header = new Header();
+
         const colorPicker = new ColorPicker({
-            changeColor: color => {
+            changeColor: () => {
+                const colorData = localStorage.getItem('color');
+                const color = JSON.parse(colorData);
                 app.style.background = color;
             }
         });
@@ -44,6 +58,7 @@ class App extends Component {
             onRemove: todoToRemove => {
                 todoApi.remove(todoToRemove);
                 todoList.update({ todos: todoApi.getAll() });
+                filter.update({ todos });
             }
         });
 
