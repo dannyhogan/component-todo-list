@@ -1,5 +1,4 @@
 import Component from './Component.js';
-import todoApi from '../services/todo-api.js';
 
 class AddTodo extends Component {
     render() {
