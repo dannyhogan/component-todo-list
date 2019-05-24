@@ -7,24 +7,18 @@ import ColorPicker from './ColorPicker.js';
 import todoData from '../../data/todo-data.js';
 import filterByTask from '../filter-todos.js';
 import todoApi from '../services/todo-api.js';
-import setColor from '../services/set-color.js';    
+import setColor from '../services/set-color.js';
+import initializeTodos from '../services/initialize-todos.js';
 
 class App extends Component {
     
     render() {
         const dom = this.renderDOM();
         const app = document.getElementById('app');
-
-        if(todoApi.isEmpty()) {
-            todoData.forEach(todo => {
-                if(!todoApi.get(todo.id)) {
-                    todoApi.save(todo);
-                }
-            });
-        }
-
+        const todos = todoApi.getAll();
         setColor(app);
-        
+        initializeTodos(todoApi, todoData);
+
         const header = new Header();
 
         const colorPicker = new ColorPicker({
@@ -34,8 +28,6 @@ class App extends Component {
                 app.style.background = color;
             }
         });
-
-        const todos = todoApi.getAll();
 
         const addTodo = new AddTodo({
             addTodo: newTodo => {
@@ -48,7 +40,7 @@ class App extends Component {
 
         const filter = new Filter({
             onFilter: filter => {
-                const filtered = filterByTask(todos, filter);
+                const filtered = filterByTask(todoApi.getAll(), filter);
                 todoList.update({ todos: filtered });
             }
         });
@@ -59,6 +51,12 @@ class App extends Component {
                 todoApi.remove(todoToRemove);
                 todoList.update({ todos: todoApi.getAll() });
                 filter.update({ todos });
+            },
+            onChange: todoToChange => {
+                todoApi.change(todoToChange);
+                const newTodos = todoApi.getAll();
+                todoList.update({ todos: newTodos });
+                filter.update();
             }
         });
 
